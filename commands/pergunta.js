@@ -14,14 +14,7 @@ module.exports = {
 
   const user = interaction.user
 
-const pergunta = new EmbedBuilder()
-	.setColor('#005FFF')
-	.setTitle(`${frase}`)
-   .setDescription(`${respostas}`)
-  .setFooter({text: `${interaction.user.tag}` , iconURL: `${interaction.user.displayAvatarURL()}`})
- .setTimestamp()
-    
- var myArray = [
+  var myArray = [
     "Não",
     "Sim",
     "Talvez",
@@ -33,6 +26,15 @@ const pergunta = new EmbedBuilder()
   
   
   var respostas = myArray[Math.floor(Math.random()*myArray.length)];
+
+const pergunta = new EmbedBuilder()
+	.setColor('#005FFF')
+	.setTitle(`${frase}`)
+   .setDescription(`${respostas}`)
+  .setFooter({text: `${interaction.user.tag}` , iconURL: `${interaction.user.displayAvatarURL()}`})
+ .setTimestamp()
+    
+ 
 
     await interaction.reply({embeds: [pergunta]})
 
