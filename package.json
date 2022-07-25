@@ -1,0 +1,21 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^1.0.0",
+    "discord.js": "^14.0.3",
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.4.6",
+    "nodemon": "^2.0.19",
+    "parse-ms-2": "^1.0.0"
+  }
+}
