@@ -66,8 +66,8 @@ const menuLoja = new EmbedBuilder()
 	.setColor('#005fff')
 	.setTitle(`Loja do ${interaction.guild.name}`)
   .setDescription(`
-  Clique em :gem: para comprar VIPs.
-  Clique em :box: para comprar Caixas.`)
+  Clique em :gem: para comprar **VIPs**.
+  Clique em :package: para comprar **Caixas**.`)
   .setThumbnail(interaction.guild.iconURL())
 
   const filter = i => i.customId === 'abrirLoja';

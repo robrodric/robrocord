@@ -15,7 +15,7 @@ const exampleEmbed = new EmbedBuilder()
   .addFields( [
             { 
               name: "📜 » Informações",
-              value: "`/avatar`, `/info servidor`, `/info usuário`, `/ping`.",
+              value: "`/ping`.",
             },
             {
               name: "😂 » Diversão",
