@@ -31,7 +31,28 @@ const button = new ActionRowBuilder()
 					.setStyle(ButtonStyle.Primary)
                     .setEmoji('🛒'),
 			);
-
+			
+const compra = new ActionRowBuilder()
+.addComponents(
+	new ButtonBuilder()
+		.setCustomId('VoltarInicio')
+		.setLabel('Voltar')
+		.setStyle(ButtonStyle.Danger),
+)
+           .addComponents(
+			    new ButtonBuilder()
+				    .setCustomId('abrirVIP')
+					.setLabel(' ')
+					.setStyle(ButtonStyle.Primary)
+					.setEmoji('💎')
+		   )
+		   .addComponents(
+			new ButtonBuilder()
+				.setCustomId('abrirCaixa')
+				.setLabel(' ')
+				.setStyle(ButtonStyle.Primary)
+				.setEmoji('📦')
+	   )
 
 const menuLoja = new EmbedBuilder()
 	.setColor('#005fff')
@@ -49,13 +70,14 @@ const menuLoja = new EmbedBuilder()
   Clique em :box: para comprar Caixas.`)
   .setThumbnail(interaction.guild.iconURL())
 
-  await interaction.reply({embeds: [menuLoja], components: [button]});
   const filter = i => i.customId === 'abrirLoja';
 
   const collector = interaction.channel.createMessageComponentCollector({ filter, time: 15000 });
 
   collector.on('collect', async i => {
-	await i.update({ embed: [escolhaLoja], components: [] });
+	await i.update({ embed: [escolhaLoja], components: [compra] });
 });
+
+  await interaction.reply({embeds: [menuLoja], components: [button]});
 	},
 }
