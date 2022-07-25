@@ -75,7 +75,7 @@ const menuLoja = new EmbedBuilder()
   const collector = interaction.channel.createMessageComponentCollector({ filter, time: 15000 });
 
   collector.on('collect', async i => {
-	await i.update({ embed: [escolhaLoja], components: [compra] });
+	await i.update({ embeds: [escolhaLoja], components: [compra] });
 });
 
   await interaction.reply({embeds: [menuLoja], components: [button]});
