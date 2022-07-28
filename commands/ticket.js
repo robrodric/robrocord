@@ -7,14 +7,7 @@ module.exports = {
 		.setDescription('[🔒 » ADMIN] - Comandpara setar o menu de suporte.'),
 	async execute(interaction) {
 
- const button = new ActionRowBuilder()
-			.addComponents(				
-        new ButtonBuilder()
-				  .setCustomId('Criar')
-				  .setLabel('Abrir Ticket')
-					.setStyle(ButtonStyle.Primary)
-          .setEmoji('➕'),
-	);
+ 
 
 const embed = new EmbedBuilder()
 .setTitle('Central de Suporte do Robrocord 🌎')
@@ -67,7 +60,7 @@ const row = new ActionRowBuilder()
 			);
             
     
-		await interaction.channel.send({embeds: [embed], components: [row, button]}),
+		await interaction.channel.send({embeds: [embed], components: [row]}),
     await interaction.reply('painel criado.')
 	}
 }

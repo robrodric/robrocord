@@ -46,6 +46,15 @@ client.once('ready', () => {
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
+	const button = new ActionRowBuilder()
+			.addComponents(				
+        new ButtonBuilder()
+				  .setCustomId('Criar')
+				  .setLabel('Abrir Ticket')
+					.setStyle(ButtonStyle.Primary)
+          .setEmoji('➕'),
+	);
+
 	const filter = i => i.values === 'Den' || 'Sug' || 'Bug' || 'Duv' || 'Par' || 'Res' || 'Out'
 
 const collector = interaction.channel.createMessageComponentCollector({ filter});
