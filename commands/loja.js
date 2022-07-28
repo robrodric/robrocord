@@ -70,12 +70,21 @@ const menuLoja = new EmbedBuilder()
   Clique em :package: para comprar **Caixas**.`)
   .setThumbnail(interaction.guild.iconURL())
 
-  const filter = i => i.customId === 'abrirLoja';
+  const filter = i => i.customId === 'abrirLoja' || 'abrirCaixa' || 'abrirVip';
 
   const collector = interaction.channel.createMessageComponentCollector({ filter, time: 15000 });
 
   collector.on('collect', async i => {
-	await i.update({ embeds: [escolhaLoja], components: [compra] });
+	if (customid == 'abrirLoja') {
+	    await i.update({ embeds: [escolhaLoja], components: [compra] });
+	}
+
+	if (customid == 'abrirCaixa') {
+		await i.update({ embeds: [escolhaCaixa], components: [compra] });
+		}
+	if (customid == 'abrirVip') {
+		await i.update({ embeds: [escolhaVip], components: [compra] });
+			}
 });
 
   await interaction.reply({embeds: [menuLoja], components: [button]});
