@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { ActionRowBuilder, ButtonBuilder, EmbedBuilder, SelectMenuBuilder } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, EmbedBuilder, SelectMenuBuilder, ButtonStyle } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -12,7 +12,7 @@ module.exports = {
         new ButtonBuilder()
 				  .setCustomId('Criar')
 				  .setLabel('Abrir Ticket')
-					.setStyle('PRIMARY')
+					.setStyle(ButtonStyle.Primary)
           .setEmoji('➕'),
 	);
 
