@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageActionRow, ButtonBuilder, EmbedBuilder, MessageSelectMenu } = require('discord.js');
+const { ActionRowBuilder, ButtonBuilder, EmbedBuilder, SelectMenuBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -7,7 +7,7 @@ module.exports = {
 		.setDescription('[🔒 » ADMIN] - Comandpara setar o menu de suporte.'),
 	async execute(interaction) {
 
- const button = new MessageActionRow()
+ const button = new ActionRowBuilder()
 			.addComponents(				
         new ButtonBuilder()
 				  .setCustomId('Criar')
@@ -22,9 +22,9 @@ const embed = new EmbedBuilder()
 .setDescription('Aqui você poderá tirar suas dúvidas, fazer sugestões e muito mais... \nLeia cuidadosamente cada opção para não se confundir!')
 .setImage("https://media.discordapp.net/attachments/776932715022254160/983249648858849280/ROBROCORD_SUPORTE-1.png")
     
-const row = new MessageActionRow()
+const row = new ActionRowBuilder()
 			.addComponents(
-				new MessageSelectMenu()
+				new SelectMenuBuilder()
 					.setCustomId('select')
 					.setPlaceholder('Selecione uma opção...')
 					.addOptions([
