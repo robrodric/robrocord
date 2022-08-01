@@ -10,7 +10,7 @@ module.exports = {
         const canvas = Canvas.createCanvas(160, 300);
 		const context = canvas.getContext('2d');
 
-        const background = await Canvas.loadImage('/imagens/backgroung.png');
+        const background = await Canvas.loadImage('/imagens/background.png');
         context.drawImage(background, 0, 0, canvas.width, canvas.height);
 
         const attachment = new AttachmentBuilder(await canvas.encode('png'), { name: 'profile-image.png' });
