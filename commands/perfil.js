@@ -1,5 +1,7 @@
 const { SlashCommandBuilder, AttachmentBuilder } = require('discord.js');
 const Canvas = require('canvas')
+const { readFile } = require('fs/promises');
+const { request } = require('undici');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('perfil')
