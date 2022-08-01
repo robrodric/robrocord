@@ -10,10 +10,12 @@ module.exports = {
         const canvas = Canvas.createCanvas(160, 300);
 		const context = canvas.getContext('2d');
 
-        const background = await Canvas.loadImage('../img/background.png');
-        context.drawImage(background, 0, 0, canvas.width, canvas.height);
+        const background = await readFile('../img/background.png');
+		const backgroundImage = new Image();
+		backgroundImage.src = background;
+		context.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
-        const attachment = new AttachmentBuilder(await canvas.encode('png'), { name: 'profile-image.png' });
+        const attachment = new AttachmentBuilder(canvas.toBuffer('image/png'), { name: 'profile-image.png' });
 		await interaction.reply({ files: [attachment]});
 	},
 };
