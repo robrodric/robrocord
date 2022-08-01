@@ -70,6 +70,14 @@ const menuLoja = new EmbedBuilder()
   Clique em :package: para comprar **Caixas**.`)
   .setThumbnail(interaction.guild.iconURL())
 
+  const escolhaCaixa = new EmbedBuilder()
+	.setColor('#005fff')
+	.setTitle(`Loja do ${interaction.guild.name}`)
+  .setDescription(`
+  Clique em :gem: para comprar **VIPs**.
+  Clique em :package: para comprar **Caixas**.`)
+  .setThumbnail(interaction.guild.iconURL())
+
   const filter = i => i.customId === 'abrirLoja' || 'abrirCaixa' || 'abrirVip';
 
   const collector = interaction.channel.createMessageComponentCollector({ filter, time: 15000 });
