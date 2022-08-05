@@ -38,13 +38,14 @@ module.exports = {
 
 		canvas.context.font = '30px Fredoka One'
 		canvas.context.fillStyle = '#ffffff'
-	 	canvas.context.fillText(`Robrocoins: ${data.coins}`, 50, 360)
+	 	canvas.context.fillText(`${data.coins}`, 100, 360)
 
 
 		canvas.context.fillStyle = '#28BABD'
         canvas.context.fillRect(50,280, 500, 2)
 
 		const avatar = await Canvas.loadImage(avatarURL)
+		const robrocoins = await Canvas.loadImage('./img/robrocoins.png')
 
 		
 		canvas.context.beginPath()
@@ -52,6 +53,7 @@ module.exports = {
 		canvas.context.closePath()
 		canvas.context.clip()
 		canvas.context.drawImage(avatar, 44, 40, 160, 160)
+		canvas.context.drawImage(robrocoins, 50, 360, 50, 50)
 
         let att = new AttachmentBuilder(canvas.create.toBuffer(), `perfil-${user}.png`)
 		await interaction.reply({files: [att]})

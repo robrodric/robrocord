@@ -51,20 +51,20 @@ console. log(e)
 const exampleEmbedA = new EmbedBuilder()
 	.setColor('#005fff')
 	.setTitle(`🏦 Banco de ${user.tag}`)
-  .setDescription(`Foi adicionado ${quantidade} robrocoins ao banco de ${user.username}!`)
+  .setDescription(`Foi adicionado ${quantidade} :robrocoins: ao banco de ${user.username}!`)
 .setThumbnail(user.displayAvatarURL())
 
 const exampleEmbedR = new EmbedBuilder()
 	.setColor('#005fff')
 	.setTitle(`🏦 Banco de ${user.tag}`)
-  .setDescription(`Foi removido ${quantidade} robrocoins do banco de ${user.username}!`)
+  .setDescription(`Foi removido ${quantidade} :robrocoins: do banco de ${user.username}!`)
 .setThumbnail(user.displayAvatarURL()) 
 
 
 const exampleEmbedS = new EmbedBuilder()
 	.setColor('#005fff')
 	.setTitle(`🏦 Banco de ${user.tag}`)
-  .setDescription(`Foi setado ${quantidade} robrocoins ao banco de ${user.username}!`)
+  .setDescription(`Foi setado ${quantidade} :robrocoins: ao banco de ${user.username}!`)
 .setThumbnail(user.displayAvatarURL())
  
 if (interaction.user.id === '655176205171163138'){

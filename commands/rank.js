@@ -40,7 +40,7 @@ for (let i = 0; i < members.length; i++) {
 let user = client.users.cache.get(members[i].userId)
 if(!user) return
 let bal = members[i].coins
-desc += `${i + 1}. ${user.tag} - ${bal}\n`
+desc += `${i + 1}. ${user.tag} - ${bal}:robrocoins:\n`
 }
 
 embed.setDescription(`${desc}`)

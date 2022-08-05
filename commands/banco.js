@@ -27,7 +27,7 @@ console. log(e)
 const exampleEmbed = new EmbedBuilder()
 	.setColor('#005fff')
 	.setTitle(`🏦 Banco de ${user.tag}`)
-  .setDescription(`**${user.username}** tem **${data.coins}** robrocoins!`)
+  .setDescription(`**${user.username}** tem **${data.coins}** :robrocoins:!`)
   .setThumbnail(user.displayAvatarURL())
   .setFooter({text: "Dica: Use /trabalhar para conseguir robrocoins!"})
 
