@@ -44,7 +44,7 @@ desc += `\`${i + 1}.\` ${user.tag} - ${bal}<:robrocoins:1004995682387632159>\n`
 }
 
 embed.setDescription(`${desc}`)
-interaction.reply({embeds: [embed]})
+ await interaction.reply({embeds: [embed]})
 }catch(e) {
 console. log(e)
 }

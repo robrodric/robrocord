@@ -8,7 +8,7 @@ const { request } = require('undici');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('perfil')
-		.setDescription('Mostre seu perfil para todo mundo ver!')
+		.setDescription('[😂 » Diversão] - Mostre seu perfil para todo mundo ver!')
         .addUserOption(option => option.setName('usuário').setDescription('Mencione o usuário.').setRequired(false))
 		.addStringOption(option => option.setName('sobre-mim').setDescription('Conte sobre você, isso aparecerá no seu perfil!').setRequired(false).setMaxLength(40)),
 	async execute(interaction) {

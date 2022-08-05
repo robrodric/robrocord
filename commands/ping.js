@@ -3,7 +3,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('ping')
-		.setDescription('Replies with Pong!'),
+		.setDescription('[📜 » Informações] - Mostra o ping do bot.'),
 	async execute(interaction, client) {
 		const ping = new EmbedBuilder()
 		.setTitle(`Pong!`)

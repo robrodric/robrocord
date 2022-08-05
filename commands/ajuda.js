@@ -19,11 +19,11 @@ const exampleEmbed = new EmbedBuilder()
             },
             {
               name: "😂 » Diversão",
-              value: "`/pergunta`.",
+              value: "`/pergunta`, `/perfil`.",
             },
             {
       name: "💸 » Economia",
-      value: "`/banco`, `/loja`, `/trabalhar`",
+      value: "`/banco`, `/loja`, `/trabalhar`, `/rank`",
             },
           ]
         )
