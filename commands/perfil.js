@@ -46,7 +46,7 @@ module.exports = {
 
 		const avatar = await Canvas.loadImage(avatarURL)
 		const robrocoins = await Canvas.loadImage('./img/robrocoins.png')
-		canvas.context.drawImage(robrocoins, 50, 320, 50, 50)
+		canvas.context.drawImage(robrocoins, 50, 325, 50, 50)
 
 		canvas.context.fillStyle = '#282A2D'
         canvas.context.fillRect(50,400, 500, 2)
