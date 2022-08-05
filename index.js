@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, GatewayIntentBits, Collection, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const mongoose = require('mongoose')
-const dotenv = require('dotenv')
+const dotenv = require('dotenv').config()
 
 mongoose.connect("mongodb+srv://robrodric:50323432@cluster0.cko7y.mongodb.net/Robrocord?retryWrites=true&w=majority", {
         useNewUrlParser: true,
