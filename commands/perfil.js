@@ -9,9 +9,11 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('perfil')
 		.setDescription('Mostre seu perfil para todo mundo ver!')
-        .addUserOption(option => option.setName('usuário').setDescription('Mencione o usuário.').setRequired(false)),
+        .addUserOption(option => option.setName('usuário').setDescription('Mencione o usuário.').setRequired(false))
+		.addStringOption(option => option.setName('sobre-mim').setDescription('Conte sobre você, isso aparecerá no seu perfil!').setRequired(false).setMaxLength(40)),
 	async execute(interaction) {
         const user = interaction.options.getUser('usuário') || interaction.user;
+		const sobre = interaction.options.getString('sobre-mim');
 		const avatarURL = `${user.displayAvatarURL({extension: "jpeg", dynamic: false, size: 256})}`
 
 		let data;
@@ -21,14 +23,16 @@ module.exports = {
 	}catch(e) {
 		console. log(e)
 	}
-		
+
+		const fetched = await user.fetch(user.hexAccentColor)
+		console.log(fetched)
 		var canvas = {}
-		canvas.create = Canvas.createCanvas(600, 620)
+		canvas.create = Canvas.createCanvas(600, 820)
 		canvas.context = canvas.create.getContext('2d')
-		canvas.context.fillStyle = '#005fff'
+		canvas.context.fillStyle = `${user.hexAccentColor}`
 		canvas.context.fillRect(0,0, 600, 120)
 		canvas.context.fillStyle = '#18191c'
-        canvas.context.fillRect(0,120, 600, 500)
+        canvas.context.fillRect(0,120, 600, 700)
         canvas.context.arc(124, 120, 92, 0, 2 * Math.PI)
 		canvas.context.fill('#18191c')
 
@@ -51,13 +55,35 @@ module.exports = {
 		canvas.context.fillStyle = '#282A2D'
         canvas.context.fillRect(50,400, 500, 2)
 
+
 		canvas.context.font = '30px Fredoka One'
 		canvas.context.fillStyle = '#B9BBBE'
 	 	canvas.context.fillText(`SOBRE MIM`, 50, 460)
 
-		canvas.context.font = '30px Fredoka One'
+		if (sobre) {
+			if (user == interaction.user) {
+		 	data.sobre = sobre
+		 	await data.save()
+			}
+		}
+
+		canvas.context.font = '25px Fredoka One'
 		canvas.context.fillStyle = '#ffffff'
 		canvas.context.fillText(`${data.sobre}`, 50, 510)
+
+		//Parte de Cargos
+
+		canvas.context.fillStyle = '#282A2D'
+        canvas.context.fillRect(50,550, 500, 2)
+
+		canvas.context.font = '30px Fredoka One'
+		canvas.context.fillStyle = '#B9BBBE'
+	 	canvas.context.fillText(`CONQUISTAS`, 50, 610)
+
+
+        canvas.context.font = '20px Fredoka One'
+		canvas.context.fillStyle = '#ffffff'
+		canvas.context.fillText(`Nenhuma por enquanto...`, 50, 660)
 		
 		canvas.context.beginPath()
 		canvas.context.arc(124, 120, 80, 0, 2 * Math.PI)

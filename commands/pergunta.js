@@ -21,7 +21,10 @@ module.exports = {
     "Quem sabe né?",
     "Um dia talvez?",
     "Eu confio que sim",
-    "Nunca"
+    "Nunca",
+    "Desista",
+    "Nunca desista",
+    "Quem sabe em outra vida?"
   ];
   
   
