@@ -46,55 +46,6 @@ client.once('ready', () => {
 client.on('interactionCreate', async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
-	const button = new ActionRowBuilder()
-			.addComponents(				
-        new ButtonBuilder()
-				  .setCustomId('Criar')
-				  .setLabel('Abrir Ticket')
-					.setStyle(ButtonStyle.Primary)
-          .setEmoji('➕'),
-	);
-
-	const filter = i => i.values === 'Den' || 'Sug' || 'Bug' || 'Duv' || 'Par' || 'Res' || 'Out'
-
-const collector = interaction.channel.createMessageComponentCollector({ filter});
-
-collector.on('collect', async i => {
-	  let ab = i.values[0]
-    i.deferUpdate()
-
-    if (ab === "Sug") {
-
-    if (interaction.guild.channels.cache.find(c => c.name === `💡-${interaction.user.id}`)) {
-let c = interaction.guild.channels.cache.find(c => c.name === `💡-${interaction.user.id}`)
-interaction.followUp(`Você já tem um ticket aberto ${c}`)
-} else {
-interaction.guild.channels.create(`💡-${interaction.user.id}`, {
- type: "GUILD_TEXT"})
-    }
- 
-    await interaction.followUp({ content: "Aperte em **Abrir Ticket** para conseguir mandar sua sugestão.", components: [button], ephemeral: true});
-    }
-  if (ab === "Res") {
-    await interaction.followUp({ content: "Aperte em **Abrir Ticket** para conseguir resgatar suas recompensas.", components: [button], ephemeral: true});
-              }
-});
-
-collector.on('collect', async b => {
-    let but = b.customId[0]
-    b.deferUpdate()
-
-    if (but === "CriarSug") {
-if (interaction.guild.channels.cache.find(c => c.name === `👀-${interaction.user.id}`)) {
-let c = interaction.guild.channels.cache.find(c => c.name === `👀-${interaction.user.id}`)
-interaction.channel.send(`Você já tem um ticket aberto ${c}`)
-} else {
-interaction.guild.channels.create(`💡-${interaction.user.username}`, {
- type: "GUILD_TEXT"})
-}
-    }
-});
-
 	const command = client.commands.get(interaction.commandName);
 
 	if (!command) return;

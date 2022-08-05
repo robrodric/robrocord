@@ -74,8 +74,21 @@ const menuLoja = new EmbedBuilder()
 	.setColor('#005fff')
 	.setTitle(`Loja do ${interaction.guild.name}`)
   .setDescription(`
-  Clique em :gem: para comprar **VIPs**.
-  Clique em :package: para comprar **Caixas**.`)
+  Caixa **Comum**: 10000 <:robrocoins:1004995682387632159>.
+  Caixa **Incomum**: 15000 <:robrocoins:1004995682387632159>.
+  Caixa **Rara**: 20000 <:robrocoins:1004995682387632159>.
+  Caixa **Épica**: 25000 <:robrocoins:1004995682387632159>.
+  Caixa **Lendária**: 30000 <:robrocoins:1004995682387632159>.`)
+  .setThumbnail(interaction.guild.iconURL())
+
+  const escolhaVip = new EmbedBuilder()
+	.setColor('#005fff')
+	.setTitle(`Loja do ${interaction.guild.name}`)
+  .setDescription(`
+  VIP **Comum**: 10000 <:robrocoins:1004995682387632159>.
+  VIP **Premium**: 200000 <:robrocoins:1004995682387632159>.
+  VIP **Diamante**: 30000 <:robrocoins:1004995682387632159>.
+  `)
   .setThumbnail(interaction.guild.iconURL())
 
   const filter = i => i.customId === 'abrirLoja' || 'abrirCaixa' || 'abrirVip';
@@ -83,14 +96,14 @@ const menuLoja = new EmbedBuilder()
   const collector = interaction.channel.createMessageComponentCollector({ filter, time: 15000 });
 
   collector.on('collect', async i => {
-	if (customid == 'abrirLoja') {
+	if (customId == 'abrirLoja') {
 	    await i.update({ embeds: [escolhaLoja], components: [compra] });
 	}
 
-	if (customid == 'abrirCaixa') {
+	if (customId == 'abrirCaixa') {
 		await i.update({ embeds: [escolhaCaixa], components: [compra] });
 		}
-	if (customid == 'abrirVip') {
+	if (customId == 'abrirVip') {
 		await i.update({ embeds: [escolhaVip], components: [compra] });
 			}
 });

@@ -15,6 +15,10 @@ const schema = mongoose.Schema({
   },
   daily:{
     type: Number
+  },
+  sobre:{
+    type: String,
+    default: "Conte mais sobre você aqui!"
   }
 
 

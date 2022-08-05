@@ -66,7 +66,7 @@ await data.save()
 const exampleEmbedR = new EmbedBuilder()
 	.setColor('#005fff')
 	.setTitle(`💸 Salário de ${user.tag}`)
-  .setDescription(`Você trabalhou na área de **${emprego}** e ganhou ${randomAmount} :robrocoins:!`)
+  .setDescription(`Você trabalhou na área de **${emprego}** e ganhou ${randomAmount} <:robrocoins:1004995682387632159>!`)
 .setThumbnail(user.displayAvatarURL())
 .setFooter({text: "Dica: Use robrocoins para comprar itens na /loja"})
 interaction.reply({embeds: [ exampleEmbedR
