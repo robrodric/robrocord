@@ -8,12 +8,12 @@ module.exports = {
             subcommand
                 .setName('info')
                 .setDescription('[📜 » Informações] - Mostra as informações do usuário.')
-                .addUserOption(option => option.setName('usuário').setDescription('Mencione o usuário.')))
+                .addUserOption(option => option.setName('usuário').setDescription('Mencione o usuário.').setRequired(true)))
         .addSubcommand(subcommand =>
             subcommand
                 .setName('avatar')
-                .setDescription('[📜 » Informações] - Mostra o avatar do usuário.'))
-                .addUserOption(option => option.setName('usuário').setDescription('Mencione o usuário.')),
+                .setDescription('[📜 » Informações] - Mostra o avatar do usuário.')
+                .addUserOption(option => option.setName('usuário').setDescription('Mencione o usuário.').setRequired(true))),
 	async execute(interaction, client) {
 		const info = new EmbedBuilder()
 		.setColor('#005fff')
@@ -26,7 +26,7 @@ module.exports = {
          .setFooter("Pagina 1/2")
          .setTimestamp()
 
-        const info2 = new MessageEmbed()
+        const info2 = new EmbedBuilder()
 	.setColor('#005fff')
 	.setTitle(`Informações de ${user.username}`)
     .addField("Cargos", `${member.roles.cache.map(r => r).join(`, `).replace("@everyone", " ")}`
@@ -35,7 +35,7 @@ module.exports = {
     .setFooter("Pagina 1/2")
      .setTimestamp()
 		
-     const avatar = new MessageEmbed()
+     const avatar = new EmbedBuilder()
      .setColor('#005fff')
      .setTitle(`Avatar de ${user.username}r`)
    .setDescription(`**Clique [aqui](${user.avatarURL()}) para baixar.**`)
