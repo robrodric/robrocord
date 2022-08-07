@@ -26,8 +26,7 @@ console. log(e)
 const button = new ActionRowBuilder()
 			.addComponents(
 				new ButtonBuilder()
-					.setCustomId('abrirLoja')
-					.setLabel(' ')
+					.setCustomId('loja')
 					.setStyle(ButtonStyle.Primary)
                     .setEmoji('🛒'),
 			);
@@ -96,19 +95,21 @@ const menuLoja = new EmbedBuilder()
 
   const collector = interaction.channel.createMessageComponentCollector({ filter, time: 15000 });
 
-  collector.on('collect', async i => {
-	if (customId == 'abrirLoja') {
+collector.on('collect', async i => {
+	if (customId === 'loja') {
 	    await i.update({ embeds: [escolhaLoja], components: [compra] });
 	}
-
-	if (customId == 'abrirCaixa') {
+});
+collector.on('collect', async i => {
+	if (customId === 'abrirCaixa') {
 		await i.update({ embeds: [escolhaCaixa], components: [compra] });
 		}
-	if (customId == 'abrirVip') {
+	});
+collector.on('collect', async i => {
+	if (customId ==='abrirVip') {
 		await i.update({ embeds: [escolhaVip], components: [compra] });
 			}
-});
-
+		});
   await interaction.reply({embeds: [menuLoja], components: [button]});
 	},
 }
