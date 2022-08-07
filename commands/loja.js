@@ -37,6 +37,7 @@ const compra = new ActionRowBuilder()
 	new ButtonBuilder()
 		.setCustomId('VoltarInicio')
 		.setLabel('Voltar')
+		.setEmoji('1005676594725142569')
 		.setStyle(ButtonStyle.Danger),
 )
            .addComponents(
