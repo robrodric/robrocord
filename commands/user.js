@@ -54,7 +54,7 @@ module.exports = {
             value:`<t:${mt}>, <t:${mt}:D>`
                     }])
          .setThumbnail(user.displayAvatarURL())
-         .setFooter({text: "Pagina 1/2"})
+         .setFooter({text: `${interaction.guild.name}`})
          .setTimestamp()
 
         const info2 = new EmbedBuilder()
