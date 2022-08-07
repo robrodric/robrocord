@@ -41,6 +41,7 @@ for (const file of eventFiles) {
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
 	console.log('Ready!');
+	client.channels.cache.get('1005725451676831794').send("Loguei!")
 });
 
 client.on('interactionCreate', async interaction => {
