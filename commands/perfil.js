@@ -80,10 +80,14 @@ module.exports = {
 		canvas.context.fillStyle = '#B9BBBE'
 	 	canvas.context.fillText(`CONQUISTAS`, 50, 610)
 
-
-        canvas.context.font = '20px Fredoka One'
+		if (user.id === '655176205171163138') {
+			const dono = await Canvas.loadImage('./img/owner.png')
+		canvas.context.drawImage(dono, 50, 660, 50, 50)
+		} else {
+		canvas.context.font = '20px Fredoka One'
 		canvas.context.fillStyle = '#ffffff'
 		canvas.context.fillText(`Nenhuma por enquanto...`, 50, 660)
+		}
 		
 		canvas.context.beginPath()
 		canvas.context.arc(124, 120, 80, 0, 2 * Math.PI)
